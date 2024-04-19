@@ -1,0 +1,8 @@
+inherit_from: configs/Replica/replica.yaml
+mapping:
+  bound: [[-5.6,1.4],[-3.2,2.8],[-1.6,1.8]]
+  marching_cubes_bound: [[-5.6,1.4],[-3.2,2.8],[-1.6,1.8]]
+data:
+  translation: 0
+  input_folder: /mnt/data/dataset/Replica/vmap/room_1/imap/00
+  output: output/Replica/room1

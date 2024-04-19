@@ -1,0 +1,82 @@
+dataset: "you/need/specified"                           # [D] 表示参数优先级位于数据集配置文件中
+device: "cuda:0"
+sleepTime: 0.001                          # 线程同步方法中线程检查一次条件的时间
+scale: 1                                  # 未定：方法特定的场景缩放因子,将读取的深度和边界大小乘以该因子
+verbose: True                             # 详细输出调试信息
+do_obj: False
+
+debug:
+  flag: False
+  checkpoint: False
+  showMapperLoss: False
+  showTrackerLoss: False
+  c2wSave: 500
+
+tracking:
+  last_best: False
+  gt_camera: True
+  ignore_edge_W: 20
+  ignore_edge_H: 20
+  const_speed_assumption: False           # [D]追踪时是否使用恒速模型
+  lr_T: 0.001
+  lr_R: 0.001
+  pixels: 64
+  pixels_bg: 160
+  iters: 10                               # [D]追踪时迭代优化次数
+
+  # 损失权重
+  fs_weight: 10
+  center_weight: 200
+  tail_weight: 50
+  depth_weight: 1
+  color_weight: 5
+
+mapping:
+  max_n_models: 100                       # 整个场景地图能够容纳的物体数量上限
+  do_bg: True                             # whether to model background as a MLP
+  weight_decay: 0.013
+  iters_first: 20                         # [D]对第０帧而言，总迭代次数（选择一次滑动窗口可能会迭代多次，所以此变量指的是总的迭代次数）
+  lr_factor: 1                            # 对后续帧而言的学习率因子,学习率需要乘以这个因子
+  iters: 20                               # [D]对后续帧而言，总迭代次数（选择一次滑动窗口可能会迭代多次，所以此变量指的是总的迭代次数）
+  every_frame: 1                          # [D]每隔多少帧启动建图线程一次
+  keyframe_every: 50                      # [D]每多少帧选一次关键帧
+  optimize_window_size: 5                 # 确定滑动窗口后，每一个实例迭代一次采样几个观测到该实例的帧
+  optimize_window_size_bg: 30             # 确定滑动窗口后，背景迭代一次采样几个观测到该实例的帧
+  pixels: 120                             # [D]确定滑动窗口后,迭代一次,一个实例采样的像素点总数
+  pixels_bg: 1200                         # 确定滑动窗口后,迭代一次,背景采样的像素点总数
+  BA: True                                # 是否在建图的时候对位子在一定条件下也进行优化
+  optim_cur: False                        # 建图的时候是否要优化当前帧的位姿
+
+  # 损失权重
+  fs_weight: 5
+  center_weight: 200
+  tail_weight: 10
+  depth_weight: 0.1
+  color_weight: 5
+
+keyframe:
+  keyframe_step_bg: 5                    # 背景间隔多少帧选定一个关键帧
+  kf_number_bg: 0.05
+  keyframe_step: 25                       # 物体间隔多少帧选定一个关键帧
+  keyframe_size: 20
+  depth_range: [0.0, 8.0]
+
+objNetwork:
+  n_unidir_funcs: 5                       # 决定 position encoding 的最高频段
+  pos_embedding_method: fourier
+  obj_scale: 2                            # 物体尺度,训练和渲染的时候将坐标除以、乘以这个尺度,参数用于位置编码参数，并且不参与梯度更新
+  hidden_feature_size: 32
+  surface_eps: 0.1                        # 当前物体表面附近采样范围
+  other_eps: 0.05                         # 除当前物体的其他物体表面附近采样范围
+  n_bins: 9                                # 物体表面附近采样分段
+  n_bins_cam2surface: 1
+  optimize_lr: 0.001
+
+mesh:
+  optimize_times: 400
+  voxel_size: 0.05
+  final_voxel_size: 0.02
+
+data:
+  input_folder: you/need/to/complement/in/higher/priority/configuration/file
+  output: you/need/to/complement/in/higher/priority/configuration/file

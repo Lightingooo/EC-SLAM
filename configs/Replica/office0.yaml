@@ -1,0 +1,10 @@
+inherit_from: configs/Replica/replica.yaml
+mapping:
+  bound: [[-3,3],[-4,2.5],[-2,2.5]]
+  marching_cubes_bound: [[-2.2,2.6],[-3.4,2.1],[-1.4,2.0]]
+data:
+  translation: 0
+  # /media/fudan-ads/Eleanor2T/Dataset/vmap/room_0/imap/00
+  # /home/fudan-ads/Desktop/Research/NICE-SLAM/Datasets/Replica/room0
+  input_folder: /mnt/data/dataset/Replica/vmap/office_0/imap/00
+  output: output/Replica/office0

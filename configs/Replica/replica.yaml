@@ -1,0 +1,92 @@
+dataset: 'replica'
+verbose: False
+debug:
+  flag: False
+  checkpoint: False
+  showMapperLoss: True
+  showTrackerLoss: False
+  c2wSave: 2000
+
+tracking:
+  last_best: False
+  gt_camera: False
+  ignore_edge_W: 20
+  ignore_edge_H: 20
+  const_speed_assumption: True
+  lr_T: 0.001
+  lr_R: 0.001
+  pixels_bg: 1000
+  iters: 8
+
+mapping:
+  optim_cur: True
+  do_bg: True                             # whether to model background as a MLP
+  every_frame: 5                          # [5]
+  keyframe_every: 5
+  pixels_bg: 2000
+  iters_first: 200
+  iters: 10
+  BA: True
+  optimize_window_size_bg: 30
+
+cam:
+  H: 680
+  W: 1200
+  fx: 600.0
+  fy: 600.0
+  cx: 599.5
+  cy: 339.5
+  png_depth_scale: 1000.0
+  crop_edge: 0
+
+sampleAndLoss:
+  depth_trunc: 100.
+  rgb_missing: 0.05
+  trunc: 0.1
+  range_d: 0.1
+  near: 0
+  far: 5
+  n_range_d: 11
+  n_samples_d: 32
+  white_bkgd: False
+  smooth_pts: 32
+  smooth_vox: 0.1
+  smooth_margin: 0.05
+  rgb_weight: 5.0
+  depth_weight: 0.1
+  sdf_weight: 1000
+  fs_weight: 10
+  smooth_weight: 0.000001
+  c_dim: 32
+  truncation: 0.06
+  trunc_factor: 0.4
+  grid_lr: 0.005
+  decoder_lr: 0.001
+  learnable_beta: True
+  n_stratified: 32
+  n_importance: 8
+  perturb: True
+
+HashGrid:
+  embed2color: False
+  sigmoid: True
+  posEnc: 'OneBlob'
+  n_bins: 16
+  hash_size: 16
+  voxel_color: 0.08
+  voxel_sdf: 0.02
+  oneGrid: True
+  geo_feat_dim: 15
+  hidden_dim: 32
+  num_layers: 2
+  num_layers_color: 2
+  hidden_dim_color: 32
+  tcnn_network: False
+  decoder_lr: 0.01
+  grid_lr: 0.01
+
+
+
+
+
+

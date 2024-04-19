@@ -1,0 +1,8 @@
+inherit_from: configs/Replica/replica.yaml
+mapping:
+  bound: [[-5.3,3.7],[-6.1,3.4],[-1.4,2.0]]
+  marching_cubes_bound: [[-5.2,3.6],[-6.0,3.3],[-1.3,1.9]]
+data:
+  translation: 0
+  input_folder: /mnt/data/dataset/Replica/vmap/office_3/imap/00
+  output: output/Replica/office3
