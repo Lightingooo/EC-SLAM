@@ -7,9 +7,9 @@
     .
     Qi Chen*
     ·
-    Yuxiang Yan*
+    Yuxiang Yan
     ·
-    Jian Pu*
+    Jian Pu
   </p>
   <p align="center"><strong>(* Equal Contribution)</strong></p>
   <h3 align="center"><a href="https://arxiv.org/abs/2404.13346">Paper</a> | <a href="https://github.com/Lightingooo/EC-SLAM">Project Page</a> 
