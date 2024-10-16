@@ -1,3 +1,24 @@
+
+<p align="center">
+
+  <h1 align="center">EC-SLAM: Effectively Constrained Neural RGB-D SLAM with Sparse TSDF Encoding and Global Bundle Adjustment</h1>
+  <h1 align="center">[Arxiv Preprint]</h1>
+  <p align="center">
+    Guanghao Li*
+    .
+    Qi Chen*
+    ·
+    Yuxiang Yan*
+    ·
+    Jian Pu*
+  </p>
+  <p align="center"><strong>(* Equal Contribution)</strong></p>
+  <h3 align="center"><a href="https://arxiv.org/abs/2404.13346">Paper</a> | <a href="https://github.com/Lightingooo/EC-SLAM">Project Page</a> 
+  <div align="center"></div>
+</p>
+
+
+
 # EC-SLAM: Effectively Constrained Neural RGB-D SLAM with Sparse TSDF Encoding and Global Bundle Adjustment
 
 We introduce EC-SLAM, a real-time dense RGB-D simultaneous localization and mapping (SLAM) system leveraging Neural Radiance Fields (NeRF). While recent NeRF-based SLAM systems have shown promising results, they have yet to fully exploit NeRF's potential to constrain pose optimization. EC-SLAM addresses this by using sparse parametric encodings and Truncated Signed Distance Fields (TSDF) to represent the map, enabling efficient fusion, reducing model parameters, and accelerating convergence. Our system also employs a globally constrained Bundle Adjustment (BA) strategy that capitalizes on NeRF's implicit loop closure correction capability, improving tracking accuracy by reinforcing constraints on keyframes most relevant to the current optimized frame. Furthermore, by integrating a feature-based and uniform sampling strategy that minimizes ineffective constraint points for pose optimization, we reduce the impact of random sampling in NeRF. Extensive evaluations on the Replica, ScanNet, and TUM datasets demonstrate state-of-the-art performance, including enhanced reconstruction accuracy due to precise pose estimation, real-time operation at 21 Hz, and tracking precision improvements of up to 50\%. 
