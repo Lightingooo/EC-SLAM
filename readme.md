@@ -70,7 +70,7 @@ debug it, and how to reproduce the results mentioned in the paper.
   </details>
 
 ## Acknowledgement
-Our codebase is based on [Co-SLAM]([https://github.com/eriksandstroem/Point-SLAM](https://github.com/HengyiWang/Co-SLAM)).
+Our codebase is based on [Co-SLAM](https://github.com/HengyiWang/Co-SLAM).
 
 ## Reproducibility
 There may be minor differences between the released codebase and the results reported in the paper. Further, we note that the GPU hardware has an influence, despite running the same seed and conda environment.
